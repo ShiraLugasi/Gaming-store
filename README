@@ -1,0 +1,9 @@
+ Gaming Online Store :
+
+Using FastAPI, you can manage the inventory of my gaming online store. You can add new games, update their details, and remove them if needed.
+
+Visit /store to view all the information about the games we offer.
+
+To get started, clone the repository to your local system:
+
+git clone https://github.com/ShiraLugasi/EASS.git
