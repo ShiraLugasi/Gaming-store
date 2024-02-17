@@ -7,3 +7,7 @@ Visit /store to view all the information about the games we offer.
 To get started, clone the repository to your local system:
 
 git clone https://github.com/ShiraLugasi/EASS.git
+
+For now, the FastAPI and docker is ready.
+
+I will continue update once the DB and the UI is ready!
