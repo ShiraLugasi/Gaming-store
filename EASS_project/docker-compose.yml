@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgresdb:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./store
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgresdb
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgresql://postgres:root@postgresdb/postgres
+  frontend:
+    build:
+      context: ./store/UI
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+
+
+
+
